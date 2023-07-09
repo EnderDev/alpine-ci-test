@@ -1,0 +1,13 @@
+name: Test
+
+on:
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        container: ghcr.io/enderdev/alpine-ci-test:latest
+
+        steps:
+            - name: System information
+              run: cat /etc/os-release
