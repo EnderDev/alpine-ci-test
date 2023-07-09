@@ -6,8 +6,11 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        container: ghcr.io/enderdev/alpine-ci-test:latest
 
         steps:
+            - name: Clean up
+              run: |
+                sudo apt list --installed
+
             - name: System information
               run: cat /etc/os-release
